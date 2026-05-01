@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Crimson_Pro, Inter } from "next/font/google";
 import "./globals.css";
+import MusicPlayer from "@/components/MusicPlayer";
 
 const crimsonPro = Crimson_Pro({
   variable: "--font-serif",
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${crimsonPro.variable} ${inter.variable}`}>
         {children}
+        <MusicPlayer />
       </body>
     </html>
   );

@@ -15,6 +15,7 @@ export interface BiblePassage {
   bibleGatewayUrl: string;
   verses: Verse[];
   sections?: Section[];
+  reflectionQuestions?: string[];
   note?: string;
 }
 
@@ -44,7 +45,7 @@ export interface WeekMeta {
   title: string;
   description: string;
   dayRange: [number, number];
-  dataFile: string;
+  dataFile?: string;
 }
 
 export interface PlanIndex {

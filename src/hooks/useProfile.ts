@@ -1,55 +1,151 @@
-"use client";
-import { useState, useEffect, useCallback } from "react";
-import type { UserProfile } from "@/types/reading-plan";
-
-const STORAGE_KEY = "biblia-egw-profile";
-const PIN = "1234";
-
-const defaultProfile = (): UserProfile => ({
-  completedDays: [],
-  currentDay: 1,
-  lastSeen: new Date().toISOString(),
-});
+import { useState, useEffect } from "react";
+import { supabase } from "@/lib/supabase";
 
 export function useProfile() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [profile, setProfile] = useState<UserProfile>(defaultProfile());
+  const [username, setUsername] = useState<string | null>(null);
+  const [completedDays, setCompletedDays] = useState<number[]>([]);
+  const [currentDay, setCurrentDay] = useState<number>(1);
+  const [youtubeUrl, setYoutubeUrl] = useState<string>("");
+  const [reflections, setReflections] = useState<Record<number, string[]>>({});
+  const [loading, setLoading] = useState(true);
 
+  // Cargar perfil al inicio si hay sesión local
   useEffect(() => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      try { setProfile(JSON.parse(stored)); } catch { /**/ }
+    async function loadProfile() {
+      const savedUser = localStorage.getItem("session_user");
+      if (savedUser) {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select('*')
+          .eq('username', savedUser)
+          .single();
+
+        if (data && !error) {
+          setUsername(data.username);
+          setCompletedDays(data.completed_days || []);
+          setCurrentDay(data.current_day || 1);
+          setYoutubeUrl(data.youtube_url || "");
+          setReflections(data.reflections || {});
+          setIsAuthenticated(true);
+        } else {
+          // Sesión inválida, limpiar
+          localStorage.removeItem("session_user");
+        }
+      }
+      setLoading(false);
     }
+    loadProfile();
   }, []);
 
-  const save = useCallback((p: UserProfile) => {
-    setProfile(p);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
-  }, []);
+  const loginSuccess = () => {
+    // Cuando PINScreen llama a esto, recargamos la página entera para que el hook atrape la sesión
+    // o forzamos re-render cargando el profile
+    const savedUser = localStorage.getItem("session_user");
+    if (savedUser) {
+      window.location.reload();
+    }
+  };
 
-  const login = useCallback((pin: string): boolean => {
-    if (pin !== PIN) return false;
-    setIsAuthenticated(true);
-    return true;
-  }, []);
+  const markComplete = async (globalDay: number) => {
+    if (!completedDays.includes(globalDay) && username) {
+      const newCompleted = [...completedDays, globalDay];
+      const nextDay = globalDay + 1; // Asumimos que el proximo dia es este
 
-  const markComplete = useCallback((globalDay: number) => {
-    setProfile(prev => {
-      const completed = prev.completedDays.includes(globalDay)
-        ? prev.completedDays
-        : [...prev.completedDays, globalDay].sort((a, b) => a - b);
-      const next = completed.length > 0 ? Math.max(...completed) + 1 : globalDay + 1;
-      const updated = { ...prev, completedDays: completed, currentDay: next, lastSeen: new Date().toISOString() };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
-      return updated;
-    });
-  }, []);
+      // Update UI Optimistically
+      setCompletedDays(newCompleted);
+      setCurrentDay(nextDay);
 
-  const goToDay = useCallback((day: number) => {
-    save({ ...profile, currentDay: day, lastSeen: new Date().toISOString() });
-  }, [profile, save]);
+      // Sincronizar con DB
+      await supabase
+        .from('profiles')
+        .update({
+          completed_days: newCompleted,
+          current_day: nextDay,
+          last_seen: new Date().toISOString()
+        })
+        .eq('username', username);
+    }
+  };
 
-  const isCompleted = useCallback((day: number) => profile.completedDays.includes(day), [profile]);
+  const unmarkComplete = async (globalDay: number) => {
+    if (completedDays.includes(globalDay) && username) {
+      const newCompleted = completedDays.filter(day => day !== globalDay);
+      const prevDay = globalDay; // Retroceder el cursor al día desmarcado
+      
+      // Update UI Optimistically
+      setCompletedDays(newCompleted);
+      setCurrentDay(prevDay);
 
-  return { isAuthenticated, profile, login, markComplete, goToDay, isCompleted };
+      // Sincronizar con DB
+      await supabase
+        .from('profiles')
+        .update({
+          completed_days: newCompleted,
+          current_day: prevDay,
+          last_seen: new Date().toISOString()
+        })
+        .eq('username', username);
+    }
+  };
+
+  const updatePin = async (newPin: string) => {
+    if (username) {
+      const { error } = await supabase
+        .from('profiles')
+        .update({ pin: newPin })
+        .eq('username', username);
+        
+      if (error) {
+        alert("Hubo un error actualizando el PIN.");
+      } else {
+        alert("¡PIN actualizado exitosamente!");
+      }
+    }
+  };
+
+  const saveYoutubeUrl = async (url: string) => {
+    if (username) {
+      setYoutubeUrl(url); // Optimistic UI
+      await supabase
+        .from('profiles')
+        .update({ youtube_url: url })
+        .eq('username', username);
+    }
+  };
+
+  const saveReflections = async (globalDay: number, answers: string[]) => {
+    if (username) {
+      const newReflections = { ...reflections, [globalDay]: answers };
+      setReflections(newReflections); // Optimistic UI
+      
+      await supabase
+        .from('profiles')
+        .update({ reflections: newReflections })
+        .eq('username', username);
+    }
+  };
+
+  const logout = () => {
+    localStorage.removeItem("session_user");
+    setIsAuthenticated(false);
+    setUsername(null);
+  };
+
+  return {
+    isAuthenticated,
+    loading,
+    username,
+    completedDays,
+    currentDay,
+    youtubeUrl,
+    reflections,
+    markComplete,
+    unmarkComplete,
+    saveYoutubeUrl,
+    saveReflections,
+    loginSuccess,
+    updatePin,
+    logout
+  };
 }

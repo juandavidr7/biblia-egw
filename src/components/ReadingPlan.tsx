@@ -14,12 +14,15 @@ interface Props {
   weeksMeta: WeekMeta[];
   initialGlobalDay: number;
   completedDays: number[];
+  reflections: Record<number, string[]>;
   onMarkComplete: (globalDay: number) => void;
+  onUnmarkComplete: (globalDay: number) => void;
+  onSaveReflections: (globalDay: number, answers: string[]) => void;
   onGoToDay: (day: number) => void;
   notionUrl: string;
 }
 
-export default function ReadingPlan({ weekData, weeksMeta, initialGlobalDay, completedDays, onMarkComplete, onGoToDay, notionUrl }: Props) {
+export default function ReadingPlan({ weekData, weeksMeta, initialGlobalDay, completedDays, reflections, onMarkComplete, onUnmarkComplete, onSaveReflections, onGoToDay, notionUrl }: Props) {
   const days = weekData.days;
   const currentDay = days.find(d => d.globalDay === initialGlobalDay) ?? days[0];
   const [activeGlobalDay, setActiveGlobalDay] = useState(currentDay.globalDay);
@@ -94,9 +97,13 @@ export default function ReadingPlan({ weekData, weeksMeta, initialGlobalDay, com
                 <a href={day.central.bibleGatewayUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
                   Bible Gateway ↗
                 </a>
-                {!isDone && (
+                {!isDone ? (
                   <button className="btn btn-complete" onClick={() => onMarkComplete(day.globalDay)}>
                     ✓ Marcar completado
+                  </button>
+                ) : (
+                  <button className="btn btn-uncomplete" onClick={() => onUnmarkComplete(day.globalDay)}>
+                    ✗ Desmarcar día
                   </button>
                 )}
               </div>
@@ -104,7 +111,15 @@ export default function ReadingPlan({ weekData, weeksMeta, initialGlobalDay, com
 
             {/* Central */}
             <div className="section-divider"><div className="section-divider-line"/><span className="section-divider-label">Texto central</span><div className="section-divider-line"/></div>
-            <PassageCard passage={day.central} variant={BOOK_VARIANTS[day.central.book] ?? "mateo"} isCentral defaultOpen />
+            <PassageCard 
+              dayId={day.globalDay}
+              passage={day.central} 
+              variant={BOOK_VARIANTS[day.central.book] ?? "mateo"} 
+              isCentral 
+              defaultOpen 
+              reflections={reflections[day.globalDay] || []}
+              onSaveReflections={(answers) => onSaveReflections(day.globalDay, answers)}
+            />
 
             {/* Parallels */}
             <div className="section-divider"><div className="section-divider-line"/><span className="section-divider-label">Paralelos</span><div className="section-divider-line"/></div>
@@ -116,15 +131,18 @@ export default function ReadingPlan({ weekData, weeksMeta, initialGlobalDay, com
             ) : (
               <>
                 {day.parallelNote && <div className="parallel-note-box"><p>{day.parallelNote}</p></div>}
-                {day.parallels.map((p, i) => (
-                  <PassageCard key={i} passage={p} variant={BOOK_VARIANTS[p.book] ?? "marcos"} />
-                ))}
+                <div className="parallels-grid">
+                  {day.parallels.map((p, i) => (
+                    <PassageCard key={i} passage={p} variant={BOOK_VARIANTS[p.book] ?? "marcos"} />
+                  ))}
+                </div>
               </>
             )}
 
             {/* EGW */}
             <div className="section-divider"><div className="section-divider-line"/><span className="section-divider-label">Elena G. de White</span><div className="section-divider-line"/></div>
             <EGWCard egw={day.egw} />
+
           </div>
         </div>
       </main>

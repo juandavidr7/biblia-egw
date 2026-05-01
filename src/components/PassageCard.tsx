@@ -1,20 +1,33 @@
 "use client";
 import { useState } from "react";
 import type { BiblePassage } from "@/types/reading-plan";
+import ReflectionModal from "./ReflectionModal";
 
 interface PassageCardProps {
+  dayId?: number;
   passage: BiblePassage;
   variant: "mateo" | "marcos" | "lucas" | "juan";
   isCentral?: boolean;
   defaultOpen?: boolean;
+  reflections?: string[];
+  onSaveReflections?: (answers: string[]) => void;
 }
 
 const LABELS: Record<string, string> = { mateo:"Mateo", marcos:"Marcos", lucas:"Lucas", juan:"Juan" };
 
-export default function PassageCard({ passage, variant, isCentral = false, defaultOpen = false }: PassageCardProps) {
+export default function PassageCard({ dayId, passage, variant, isCentral = false, defaultOpen = false, reflections, onSaveReflections }: PassageCardProps) {
   const [open, setOpen] = useState(defaultOpen);
+  const [reflectionIndex, setReflectionIndex] = useState<number | null>(null);
 
   const verseMap = Object.fromEntries(passage.verses.map(v => [v.number, v.text]));
+
+  const handleSaveReflection = (answer: string, qIndex: number) => {
+    if (onSaveReflections) {
+      const newReflections = reflections ? [...reflections] : [];
+      newReflections[qIndex] = answer;
+      onSaveReflections(newReflections);
+    }
+  };
 
   return (
     <div className="passage-card">
@@ -56,6 +69,11 @@ export default function PassageCard({ passage, variant, isCentral = false, defau
                     </div>
                   ) : null)}
                 </div>
+                {passage.reflectionQuestions && passage.reflectionQuestions[si] && (
+                  <button className="inline-reflection-btn" onClick={(e) => { e.stopPropagation(); setReflectionIndex(si); }}>
+                    <span className="reflection-btn-icon">🤔</span> Pregunta de Reflexión
+                  </button>
+                )}
               </div>
             ))
           ) : (
@@ -71,7 +89,25 @@ export default function PassageCard({ passage, variant, isCentral = false, defau
           {passage.note && (
             <div className="passage-note"><span>ℹ</span><span>{passage.note}</span></div>
           )}
+          
+          {passage.reflectionQuestions && passage.sections && passage.reflectionQuestions.length > passage.sections.length && (
+            <div className="passage-footer-reflection">
+              <button className="inline-reflection-btn final-reflection" onClick={(e) => { e.stopPropagation(); setReflectionIndex(passage.reflectionQuestions!.length - 1); }}>
+                <span className="reflection-btn-icon">🤔</span> Reflexión Final
+              </button>
+            </div>
+          )}
         </div>
+      )}
+
+      {reflectionIndex !== null && passage.reflectionQuestions && (
+        <ReflectionModal
+          isOpen={reflectionIndex !== null}
+          onClose={() => setReflectionIndex(null)}
+          question={passage.reflectionQuestions[reflectionIndex]}
+          initialAnswer={reflections?.[reflectionIndex] || ""}
+          onSave={(answer) => handleSaveReflection(answer, reflectionIndex)}
+        />
       )}
     </div>
   );
