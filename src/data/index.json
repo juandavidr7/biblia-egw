@@ -1,0 +1,13 @@
+{
+  "totalWeeks": 1,
+  "totalDays": 7,
+  "weeks": [
+    {
+      "week": 1,
+      "title": "El camino a Jerusalén — Mateo 20-21",
+      "description": "La última semana de ministerio fuera de Jerusalén: gracia radical, liderazgo invertido, y la entrada del Rey que nadie esperaba.",
+      "dayRange": [1, 7],
+      "dataFile": "week-01.json"
+    }
+  ]
+}

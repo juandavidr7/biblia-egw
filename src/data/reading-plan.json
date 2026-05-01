@@ -1,0 +1,195 @@
+[
+  {
+    "day": 1,
+    "title": "La gracia que no se negocia: el viñedo del reino",
+    "subtitle": "¿Por qué Dios da lo mismo a quien trabajó toda la vida que al que llegó al final? La parábola que rompe toda lógica humana de mérito.",
+    "estimatedMinutes": 12,
+    "central": {
+      "book": "Mateo",
+      "reference": "Mateo 20:1-16",
+      "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Mateo+20%3A1-16&version=NTV",
+      "verses": [
+        { "number": 1, "text": "»El reino del cielo es como un propietario que salió temprano por la mañana con el fin de contratar trabajadores para su viñedo." },
+        { "number": 2, "text": "Acordó pagar el salario normal de un día de trabajo y los envió a trabajar." },
+        { "number": 3, "text": "»A las nueve de la mañana, cuando pasaba por la plaza, vio a algunas personas que estaban allí sin hacer nada." },
+        { "number": 4, "text": "Entonces las contrató y les dijo que, al final del día, les pagaría lo que fuera justo. " },
+        { "number": 5, "text": "Así que fueron a trabajar al viñedo. El propietario hizo lo mismo al mediodía y a las tres de la tarde." },
+        { "number": 6, "text": "»A las cinco de la tarde, se encontraba nuevamente en la ciudad y vio a otros que estaban allí. Les preguntó: «¿Por qué ustedes no trabajaron hoy?»." },
+        { "number": 7, "text": "»Ellos contestaron: «Porque nadie nos contrató». »El propietario les dijo: «Entonces vayan y únanse a los otros en mi viñedo»." },
+        { "number": 8, "text": "»Aquella noche, le dijo al capataz que llamara a los trabajadores y les pagara, comenzando por los últimos que había contratado." },
+        { "number": 9, "text": "Cuando recibieron su paga los que habían sido contratados a las cinco de la tarde, cada uno recibió el salario por una jornada completa." },
+        { "number": 10, "text": "Cuando los que habían sido contratados primero llegaron a recibir su paga, supusieron que recibirían más; pero a ellos también se les pagó el salario de un día." },
+        { "number": 11, "text": "Cuando recibieron la paga, protestaron contra el propietario:" },
+        { "number": 12, "text": "«Aquellos trabajaron solo una hora, sin embargo, se les ha pagado lo mismo que a nosotros, que trabajamos todo el día bajo el intenso calor»." },
+        { "number": 13, "text": "»Él le respondió a uno de ellos: «Amigo, ¡no he sido injusto! ¿Acaso tú no acordaste conmigo que trabajarías todo el día por el salario acostumbrado?" },
+        { "number": 14, "text": "Toma tu dinero y vete. Quise pagarle a este último trabajador lo mismo que a ti." },
+        { "number": 15, "text": "¿Acaso es contra la ley que yo haga lo que quiero con mi dinero? ¿Te pones celoso porque soy bondadoso con otros?»." },
+        { "number": 16, "text": "»Así que los que ahora son últimos, ese día serán los primeros, y los primeros serán los últimos." }
+      ]
+    },
+    "parallels": [],
+    "parallelNote": "Esta parábola es exclusiva de Mateo. No aparece en Marcos, Lucas ni Juan.",
+    "egw": {
+      "book": "Palabras de Vida del Gran Maestro",
+      "chapter": "Capítulo 29 — El premio inmerecido",
+      "url": "https://m.egwwritings.org/es/book/210.1732",
+      "note": "EGW desarrolla esta parábola en Palabras de Vida del Gran Maestro, no en El Deseado de Todas las Gentes."
+    }
+  },
+  {
+    "day": 2,
+    "title": "El anuncio que nadie quiso escuchar: la sombra de la cruz",
+    "subtitle": "Por tercera vez Jesús les dice exactamente lo que va a pasar. Por tercera vez sus discípulos no lo entienden. ¿Por qué era tan difícil aceptar un Mesías sufriente?",
+    "estimatedMinutes": 10,
+    "central": {
+      "book": "Mateo",
+      "reference": "Mateo 20:17-19",
+      "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Mateo+20%3A17-19&version=NTV",
+      "verses": [
+        { "number": 17, "text": "Mientras Jesús subía a Jerusalén, llevó a los doce discípulos aparte y les contó en privado lo que le iba a suceder." },
+        { "number": 18, "text": "«Escuchen —les dijo—, subimos a Jerusalén, donde el Hijo del Hombre será traicionado y entregado a los principales sacerdotes y a los maestros de la ley religiosa. Lo condenarán a muerte." },
+        { "number": 19, "text": "Luego lo entregarán a los romanos para que se burlen de él, lo azoten con un látigo y lo crucifiquen; pero al tercer día, se levantará de los muertos»." }
+      ]
+    },
+    "parallels": [
+      {
+        "book": "Marcos",
+        "reference": "Marcos 10:32-34",
+        "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Marcos+10%3A32-34&version=NTV",
+        "verses": [
+          { "number": 32, "text": "Subían rumbo a Jerusalén, y Jesús caminaba delante de ellos. Los discípulos estaban llenos de asombro y la gente que los seguía, abrumada de temor. Jesús tomó a los doce discípulos aparte y, una vez más, comenzó a describir todo lo que estaba por sucederle." },
+          { "number": 33, "text": "«Escuchen —les dijo—, subimos a Jerusalén, donde el Hijo del Hombre será traicionado y entregado a los principales sacerdotes y a los maestros de la ley religiosa. Lo condenarán a muerte y lo entregarán a los romanos." },
+          { "number": 34, "text": "Se burlarán de él, lo escupirán, lo azotarán con un látigo y lo matarán; pero después de tres días, resucitará»." }
+        ]
+      },
+      {
+        "book": "Lucas",
+        "reference": "Lucas 18:31-34",
+        "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Lucas+18%3A31-34&version=NTV",
+        "verses": [
+          { "number": 31, "text": "Jesús llevó a los doce discípulos aparte y dijo: «Escuchen, subimos a Jerusalén, donde todas las predicciones de los profetas acerca del Hijo del Hombre se harán realidad." },
+          { "number": 32, "text": "Será entregado a los romanos, y se burlarán de él, lo tratarán de manera vergonzosa y lo escupirán." },
+          { "number": 33, "text": "Lo azotarán con un látigo y lo matarán, pero al tercer día resucitará»." },
+          { "number": 34, "text": "Sin embargo, ellos no entendieron nada de esto. La importancia de sus palabras estaba oculta de ellos, y no captaron lo que decía." }
+        ]
+      }
+    ],
+    "parallelNote": null,
+    "egw": {
+      "book": "El Deseado de Todas las Gentes",
+      "chapter": "Capítulo 60 — La ley del nuevo reino",
+      "url": "https://m.egwwritings.org/es/book/174.2619",
+      "note": null
+    }
+  },
+  {
+    "day": 3,
+    "title": "El poder al revés: el primero será el esclavo de todos",
+    "subtitle": "Justo después de anunciar su muerte, dos discípulos piden los mejores puestos del reino. Jesús responde con la lección más radical sobre liderazgo que el mundo haya escuchado.",
+    "estimatedMinutes": 14,
+    "central": {
+      "book": "Mateo",
+      "reference": "Mateo 20:20-28",
+      "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Mateo+20%3A20-28&version=NTV",
+      "verses": [
+        { "number": 20, "text": "Entonces la madre de Santiago y de Juan, hijos de Zebedeo, se acercó con sus hijos a Jesús. Se arrodilló respetuosamente para pedirle un favor." },
+        { "number": 21, "text": "—¿Cuál es tu petición?—le preguntó Jesús. La mujer contestó: —Te pido, por favor, que permitas que, en tu reino, mis dos hijos se sienten en lugares de honor a tu lado, uno a tu derecha y el otro a tu izquierda." },
+        { "number": 22, "text": "Jesús les respondió: —¡No saben lo que piden! ¿Acaso pueden beber de la copa amarga de sufrimiento que yo estoy a punto de beber?" },
+        { "number": 23, "text": "—Claro que sí—contestaron ellos—, ¡podemos! Jesús les dijo: —Es cierto, beberán de mi copa amarga; pero no me corresponde a mí decir quién se sentará a mi derecha o a mi izquierda. Mi Padre preparó esos lugares para quienes él ha escogido." },
+        { "number": 24, "text": "Cuando los otros diez discípulos oyeron lo que Santiago y Juan habían pedido, se indignaron." },
+        { "number": 25, "text": "Así que Jesús los reunió a todos y les dijo: «Ustedes saben que los gobernantes de este mundo tratan a su pueblo con prepotencia y los funcionarios hacen alarde de su autoridad frente a los súbditos." },
+        { "number": 26, "text": "Pero entre ustedes será diferente. El que quiera ser líder entre ustedes deberá ser sirviente," },
+        { "number": 27, "text": "y el que quiera ser el primero entre ustedes deberá convertirse en esclavo." },
+        { "number": 28, "text": "Pues ni aun el Hijo del Hombre vino para que le sirvan, sino para servir a otros y para dar su vida en rescate por muchos»." }
+      ]
+    },
+    "parallels": [
+      {
+        "book": "Marcos",
+        "reference": "Marcos 10:35-45",
+        "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Marcos+10%3A35-45&version=NTV",
+        "verses": [
+          { "number": 35, "text": "Entonces Santiago y Juan, hijos de Zebedeo, se le acercaron y dijeron: —Maestro, queremos que nos hagas un favor." },
+          { "number": 36, "text": "—¿Cuál es la petición? —preguntó él." },
+          { "number": 37, "text": "Ellos contestaron: —Cuando te sientes en tu trono glorioso, nosotros queremos sentarnos en lugares de honor a tu lado, uno a tu derecha y el otro a tu izquierda." },
+          { "number": 38, "text": "Jesús les dijo: —¡No saben lo que piden! ¿Acaso pueden beber de la copa amarga de sufrimiento que yo estoy a punto de beber? ¿Acaso pueden ser bautizados con el bautismo de sufrimiento con el cual yo tengo que ser bautizado?" },
+          { "number": 39, "text": "—Claro que sí—contestaron ellos—, ¡podemos! Entonces Jesús les dijo: —Es cierto, beberán de mi copa amarga y serán bautizados con mi bautismo de sufrimiento;" },
+          { "number": 40, "text": "pero no me corresponde a mí decir quién se sentará a mi derecha o a mi izquierda. Dios preparó esos lugares para quienes él ha escogido." },
+          { "number": 41, "text": "Cuando los otros diez discípulos oyeron lo que Santiago y Juan habían pedido, se indignaron." },
+          { "number": 42, "text": "Así que Jesús los reunió a todos y les dijo: «Ustedes saben que los gobernantes de este mundo tratan a su pueblo con prepotencia y los funcionarios hacen alarde de su autoridad frente a los súbditos." },
+          { "number": 43, "text": "Pero entre ustedes será diferente. El que quiera ser líder entre ustedes deberá ser sirviente," },
+          { "number": 44, "text": "y el que quiera ser el primero entre ustedes deberá ser esclavo de los demás." },
+          { "number": 45, "text": "Pues ni aun el Hijo del Hombre vino para que le sirvan, sino para servir a otros y para dar su vida en rescate por muchos»." }
+        ],
+        "note": "En Marcos son Santiago y Juan quienes piden directamente; en Mateo lo hace su madre."
+      }
+    ],
+    "parallelNote": "Lucas no registra este episodio en el mismo contexto.",
+    "egw": {
+      "book": "El Deseado de Todas las Gentes",
+      "chapter": "Capítulo 60 — La ley del nuevo reino",
+      "url": "https://m.egwwritings.org/es/book/174.2619",
+      "note": null
+    }
+  },
+  {
+    "day": 4,
+    "title": "Fe que grita en medio del ruido: los ojos que vieron a Jesús",
+    "subtitle": "Dos hombres ciegos logran lo que los discípulos aún no pueden: ver quién es Jesús realmente. Clamaron, les callaron, clamaron más fuerte — y Jesús se detuvo.",
+    "estimatedMinutes": 13,
+    "central": {
+      "book": "Mateo",
+      "reference": "Mateo 20:29-34",
+      "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Mateo+20%3A29-34&version=NTV",
+      "verses": [
+        { "number": 29, "text": "Mientras Jesús y sus discípulos salían de la ciudad de Jericó, una gran multitud los seguía." },
+        { "number": 30, "text": "Dos hombres ciegos estaban sentados junto al camino. Cuando oyeron que Jesús venía en dirección a ellos, comenzaron a gritar: «¡Señor, Hijo de David, ten compasión de nosotros!»." },
+        { "number": 31, "text": "«¡Cállense!», les gritó la multitud. Sin embargo, los dos ciegos gritaban aún más fuerte: «¡Señor, Hijo de David, ten compasión de nosotros!»." },
+        { "number": 32, "text": "Cuando Jesús los oyó, se detuvo y los llamó: —¿Qué quieren que haga por ustedes?" },
+        { "number": 33, "text": "—Señor—dijeron—, ¡queremos ver!" },
+        { "number": 34, "text": "Jesús se compadeció de ellos y les tocó los ojos. ¡Al instante pudieron ver! Luego lo siguieron." }
+      ]
+    },
+    "parallels": [
+      {
+        "book": "Marcos",
+        "reference": "Marcos 10:46-52",
+        "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Marcos+10%3A46-52&version=NTV",
+        "verses": [
+          { "number": 46, "text": "Después llegaron a Jericó y mientras Jesús y sus discípulos salían de la ciudad, una gran multitud los siguió. Un mendigo ciego llamado Bartimeo (hijo de Timeo) estaba sentado junto al camino." },
+          { "number": 47, "text": "Cuando Bartimeo oyó que Jesús de Nazaret estaba cerca, comenzó a gritar: «¡Jesús, Hijo de David, ten compasión de mí!»." },
+          { "number": 48, "text": "«¡Cállate!», muchos le gritaban, pero él gritó aún más fuerte: «¡Hijo de David, ten compasión de mí!»." },
+          { "number": 49, "text": "Cuando Jesús lo oyó, se detuvo y dijo: «Díganle que se acerque». Así que llamaron al ciego. «Anímate—le dijeron—. ¡Vamos, él te llama!»." },
+          { "number": 50, "text": "Bartimeo echó a un lado su abrigo, se levantó de un salto y se acercó a Jesús." },
+          { "number": 51, "text": "—¿Qué quieres que haga por ti? —preguntó Jesús. —Mi Rabí—dijo el hombre ciego—, ¡quiero ver!" },
+          { "number": 52, "text": "Y Jesús le dijo: —Puedes irte, pues tu fe te ha sanado. Al instante el hombre pudo ver y siguió a Jesús por el camino." }
+        ],
+        "note": "Marcos nombra al ciego como Bartimeo y registra uno solo."
+      },
+      {
+        "book": "Lucas",
+        "reference": "Lucas 18:35-43",
+        "bibleGatewayUrl": "https://www.biblegateway.com/passage/?search=Lucas+18%3A35-43&version=NTV",
+        "verses": [
+          { "number": 35, "text": "Al acercarse Jesús a Jericó, un mendigo ciego estaba sentado junto al camino." },
+          { "number": 36, "text": "Cuando oyó el ruido de la multitud que pasaba, preguntó qué sucedía." },
+          { "number": 37, "text": "Le dijeron que Jesús de Nazaret pasaba por allí." },
+          { "number": 38, "text": "Entonces comenzó a gritar: «¡Jesús, Hijo de David, ten compasión de mí!»." },
+          { "number": 39, "text": "«¡Cállate!», le gritaba la gente que estaba más adelante. Sin embargo, él gritó aún más fuerte: «¡Hijo de David, ten compasión de mí!»." },
+          { "number": 40, "text": "Cuando Jesús lo oyó, se detuvo y ordenó que le trajeran al hombre. Al acercarse el ciego, Jesús le preguntó:" },
+          { "number": 41, "text": "—¿Qué quieres que haga por ti? —Señor—le dijo—, ¡quiero ver!" },
+          { "number": 42, "text": "Jesús le dijo: —Bien, recibe la vista. Tu fe te ha sanado." },
+          { "number": 43, "text": "Al instante el hombre pudo ver y siguió a Jesús mientras alababa a Dios. Y todos los que lo vieron también alabaron a Dios." }
+        ],
+        "note": "Lucas sitúa el evento antes de entrar a Jericó y registra un solo ciego."
+      }
+    ],
+    "parallelNote": null,
+    "egw": {
+      "book": "El Deseado de Todas las Gentes",
+      "chapter": "Capítulo 61 — Zaqueo",
+      "url": "https://m.egwwritings.org/es/book/174.2649",
+      "note": "Este capítulo incluye el paso por Jericó donde ocurre la sanación de los ciegos."
+    }
+  }
+]
